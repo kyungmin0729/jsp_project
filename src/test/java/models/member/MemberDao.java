@@ -24,4 +24,8 @@ public class MemberDao {
     public boolean exists(String userId) {
       return members.containsKey(userId);
     }
+
+    public static void clearData() {
+        members.clear();
+    }
 }
