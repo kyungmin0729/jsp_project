@@ -108,4 +108,5 @@ public class JoinServiceTest {
         });
         assertTrue(thrown.getMessage().contains(word));
     }
+    // - 필수 항목 검증(아이디, 비밀번호, 비밀번호 확인, 회원명, 이메일, 회원가입약관 동의) 완료
 }
