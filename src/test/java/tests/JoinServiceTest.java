@@ -1,10 +1,7 @@
 package tests;
 
 import commons.BadRequestException;
-import models.member.JoinService;
-import models.member.JoinValidator;
-import models.member.Member;
-import models.member.MemberDao;
+import models.member.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,7 +14,8 @@ public class JoinServiceTest {
 
     @BeforeEach
     void init() {
-        joinService = new JoinService(new JoinValidator(), new MemberDao()); // 관리하기 편한 객체조립기 필요함
+        //joinService = new JoinService(new JoinValidator(), new MemberDao()); // 관리하기 편한 객체조립기 필요함
+        joinService = ServiceManager.getInstance().joinService();
     }
 
     private Member getMember() {
