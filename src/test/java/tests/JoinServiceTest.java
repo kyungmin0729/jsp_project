@@ -35,7 +35,7 @@ public class JoinServiceTest {
     @DisplayName("회원가입 성공시 예외발생하지 않음")
     void joinSuccess() {
         assertDoesNotThrow(() -> {
-            joinService.join(getMember()));
+            joinService.join(getMember());
         });
 
     }
@@ -54,5 +54,4 @@ public class JoinServiceTest {
             joinService.join(member);
         });
     }
-
 }
