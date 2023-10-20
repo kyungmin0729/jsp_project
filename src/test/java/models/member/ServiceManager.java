@@ -19,7 +19,10 @@ public class ServiceManager {
         return new MemberDao();
     }
     public JoinValidator joinValidator() {
-        return new JoinValidator();
+        JoinValidator validator = new JoinValidator();
+        validator.setMemberDao(memberDao());
+
+        return validator;
     }
 
     public JoinService joinService() {
