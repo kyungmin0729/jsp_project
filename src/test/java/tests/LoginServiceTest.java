@@ -32,7 +32,7 @@ public class LoginServiceTest {
 
     @BeforeEach
     void init() {
-        loginService = new LoginService();
+        loginService = ServiceManager.getInstance().loginService();
 
         member = getMember();
         JoinService joinService = ServiceManager.getInstance().joinService();
