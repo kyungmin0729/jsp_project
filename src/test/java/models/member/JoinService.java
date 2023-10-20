@@ -13,7 +13,8 @@ public class JoinService {
     }
     public void join(Member member) {
         //JoinValidator validator = new JoinValidator();
-
         validator.check(member);
+
+        memberDao.register(member);
     }
 }
