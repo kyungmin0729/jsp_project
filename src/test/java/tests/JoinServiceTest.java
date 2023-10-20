@@ -141,9 +141,12 @@ public class JoinServiceTest {
     void duplicateJoinCheck() {
         assertThrows(DuplicateMemberException.class, () -> {
             Member member = getMember();
-            joinService.join(member);
+            String userPw = member.getUserPw();
+            joinService.join(member); // 해시화
 
-            joinService.join(member);
+
+            member.setUserPw((userPw));
+            joinService.join(member); // 두번째 해시화
         });
     }
 }
