@@ -7,6 +7,7 @@
 - jstl api
 - jstl implementation
 - lombok
+- BCrypt (https://central.sonatype.com/artifact/org.mindrot/jbcrypt)
 - 톰캣11 서버 설정
 
 # 회원 가입 기능 설계(JoinService)
