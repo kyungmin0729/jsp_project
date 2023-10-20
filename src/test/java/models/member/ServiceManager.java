@@ -1,23 +1,23 @@
 package models.member;
 
 public class ServiceManager {
-    //객체조립기 - 의존성 ,싱글톤 사용
 
     private static ServiceManager instance;
-    private ServiceManager() {};
+
+    private ServiceManager() {}
 
     public static ServiceManager getInstance() {
-        if (instance == null ) {
+        if (instance == null) {
             instance = new ServiceManager();
         }
 
         return instance;
     }
 
-
     public MemberDao memberDao() {
         return new MemberDao();
     }
+
     public JoinValidator joinValidator() {
         JoinValidator validator = new JoinValidator();
         validator.setMemberDao(memberDao());
@@ -30,11 +30,11 @@ public class ServiceManager {
     }
 
     public LoginValidator loginValidator() {
+
         return new LoginValidator(memberDao());
     }
 
     public LoginService loginService() {
-        return new LoginService(loginValidator());
+        return new LoginService(loginValidator(), memberDao());
     }
-
 }
