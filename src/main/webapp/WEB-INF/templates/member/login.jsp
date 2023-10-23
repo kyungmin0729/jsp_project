@@ -17,6 +17,10 @@
                 <input type="password" name="userPw">
             </dd>
         </dl>
+        <div>
+            <input type="checkbox" name="saveId" value="true" id="saveId">
+            <label for="saveId">아이디 저장</label>
+        </div>
         <button type="submit">로그인</button>
     </form>
 </layout:main>
