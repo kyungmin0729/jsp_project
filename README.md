@@ -19,32 +19,28 @@
 - 비밀번호, 비밀번호 확인 입력 데이터 일치여부 체크
 ######
 - 회원 정보를 저장 
-1) 암호화
-######
-양방향 암호화 
-- 암호화 <--> 복호화 
-- AES256... 
-- Aria
-######
-단방향 암호화 - 해시, 복호화x (원 데이터로 복구x)
-######
-1) 고정값 해시 : 값은 값에 대해서 같은 해시 - md5, sha1, sha245, sha516
-######
-2) 유동 해시 : 같은 값에 대해서 해시를 만들때 마다 다른 해시 -> 예측 불가능성 - BCrypt
+  1) 암호화 
+    - 양방향 암호화 
+      - 암호화 <--> 복호화 
+      - AES256... 
+      - Aria
+    - 단방향 암호화 - 해시, 복호화x (원 데이터로 복구x)
+      - 고정값 해시 : 값은 값에 대해서 같은 해시 - md5, sha1, sha245, sha516 
+      - 유동 해시 : 같은 값에 대해서 해시를 만들때 마다 다른 해시 -> 예측 불가능성 - BCrypt
 
 # 기능통합
-    - 회원가입
-    * Controller : /member/join
-    * controllers/member/JoinController.java
-    * GET : 회원가입 양식
-    * POST : 회원가입 처리
-    * View : /WEB-INF/templates/member/join.jsp
+- 회원가입 
+    - Controller : /member/join
+    - controllers/member/JoinController.java
+    - GET : 회원가입 양식 
+    - POST : 회원가입 처리 
+    - View : /WEB-INF/templates/member/join.jsp
 - 로그인
-- Controller : /member/login
-- controllers/member/LoginController.java
-- GET : 로그인 양식
-- POST : 로그인 처리
-- View : /WEB-INF/templates/member/login.jsp
+  - Controller : /member/login
+  - controllers/member/LoginController.java
+  - GET : 로그인 양식
+  - POST : 로그인 처리
+  - View : /WEB-INF/templates/member/login.jsp
 - 메인페이지
  - 로그인한 경우
    - 사용자명(아이디)님 로그인 메세지 출력
@@ -56,3 +52,10 @@
   - Controller
     - controllers/member/LogoutController.java
   - GET, POST 메서드 상관 없이 기능 할 수 있도록 처리
+
+## 완성 화면
+### 회원가입
+
+### 로그인
+
+### 메인페이지
