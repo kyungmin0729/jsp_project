@@ -8,7 +8,7 @@
         <dl>
             <dt>아이디</dt>
             <dd>
-                <input type="text" name="userId">
+                <input type="text" name="userId" value="${cookie.saveId.value}">
             </dd>
         </dl>
         <dl>
