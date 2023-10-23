@@ -31,3 +31,11 @@
 1) 고정값 해시 : 값은 값에 대해서 같은 해시 - md5, sha1, sha245, sha516
 ######
 2) 유동 해시 : 같은 값에 대해서 해시를 만들때 마다 다른 해시 -> 예측 불가능성 - BCrypt
+
+# 기능통합
+* 회원가입
+* Controller : /member/join
+* controllers/member/JoinController.java
+* GET : 회원가입 양식
+* POST : 회원가입 처리
+* View : /WEB-INF/templates/member/join.jsp
