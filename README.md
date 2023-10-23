@@ -33,9 +33,15 @@
 2) 유동 해시 : 같은 값에 대해서 해시를 만들때 마다 다른 해시 -> 예측 불가능성 - BCrypt
 
 # 기능통합
-* 회원가입
+- 회원가입
 * Controller : /member/join
 * controllers/member/JoinController.java
 * GET : 회원가입 양식
 * POST : 회원가입 처리
 * View : /WEB-INF/templates/member/join.jsp
+- 로그인
+- Controller : /member/login
+- controllers/member/LoginController.java
+- GET : 로그인 양식
+- POST : 로그인 처리
+- View : /WEB-INF/templates/member/login.jsp
