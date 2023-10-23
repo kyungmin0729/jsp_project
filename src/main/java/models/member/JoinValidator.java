@@ -6,17 +6,20 @@ import commons.RequiredValidator;
 import commons.Validator;
 
 public class JoinValidator implements Validator<Member>, RequiredValidator, LengthValidator {
+
     private MemberDao memberDao;
 
     public void setMemberDao(MemberDao memberDao) {
         this.memberDao = memberDao;
     }
+
     @Override
     public void check(Member member) {
         String userId = member.getUserId();
         String userPw = member.getUserPw();
         String confirmUserPw = member.getConfirmUserPw();
-        //필수 항목 검증 S
+
+        // 필수 항목 검증 S
         requiredCheck(userId, new BadRequestException("아이디를 입력하세요."));
         requiredCheck(userPw, new BadRequestException("비밀번호를 입력하세요."));
         requiredCheck(confirmUserPw, new BadRequestException("비밀번호를 확인하세요."));
@@ -27,16 +30,15 @@ public class JoinValidator implements Validator<Member>, RequiredValidator, Leng
         // 필수 항목 검증 E
 
         // 아이디, 비밀번호 자리수 체크 S
-        lengthCheck(userId,6,new BadRequestException("아이디는 6자리 이상 입력하세요."));
-        lengthCheck(userPw,8,new BadRequestException("비밀번호는 8자리 이상 입력하세요."));
+        lengthCheck(userId, 6, new BadRequestException("아이디는 6자리 이상 입력하세요."));
+        lengthCheck(userPw, 8, new BadRequestException("비밀번호는 8자리 이상 입력하세요."));
         // 아이디, 비밀번호 자리수 체크 E
 
-        // 비밀번호, 비밀번호 확인 일치여부 체크 S
-        requiredTrue (userPw.equals(confirmUserPw), new BadRequestException("비밀번호가 일치하지 않습니다."));
-        // 비밀번호, 비밀번호 확인 일치여부 체크 E
+        // 비밀번호, 비밀번호 확인 일치여부 체크
+        requiredTrue(userPw.equals(confirmUserPw), new BadRequestException("비밀번호가 일치하지 않습니다."));
 
-        // 중복 가입 체크 여부 S
-        requiredTrue(!memberDao.exists(userId), new DuplicateMemberException()); // 기본값이 false 이기 때문에 ! << 추가
-        // 중복 가입 체크 여부 E
+        // 중복 가입 여부 체크
+        requiredTrue(!memberDao.exists(userId), new DuplicateMemberException());
+
     }
 }
