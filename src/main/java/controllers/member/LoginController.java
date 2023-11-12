@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet {
             LoginService service = ServiceManager.getInstance().loginService();
             service.login(req);
 
-            /* 아이디 저장 처리 S */
+            /* 아이디 저장 처리  S */
             String userId = req.getParameter("userId");
             String saveId = req.getParameter("saveId");
             Cookie cookie = new Cookie("saveId", userId);
@@ -42,7 +42,7 @@ public class LoginController extends HttpServlet {
             }
 
             resp.addCookie(cookie);
-            /* 아이디 저장 처리 E */
+            /* 아이디 저장 처리  E */
 
             go(resp, req.getContextPath() + "/", "parent");
         } catch (RuntimeException e) {

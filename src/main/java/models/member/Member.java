@@ -3,8 +3,7 @@ package models.member;
 import lombok.Builder;
 import lombok.Data;
 
-@Builder
-@Data
+@Builder @Data
 public class Member {
     private String userId;
     private String userPw;

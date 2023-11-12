@@ -1,4 +1,4 @@
-package $org.project;
+package $org.koreait;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
